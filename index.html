@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daneen Majeed | Portfolio</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Tab functionality */
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: slideUpFade 0.6s ease forwards;
+        }
+
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Abstract glow animation */
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.05); }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#F3EFE7] text-[#292524] selection:bg-[#B87A44] selection:text-white pb-20 overflow-x-hidden w-full">
+
+    <header class="relative overflow-hidden bg-gradient-to-br from-[#241E1A] via-[#1A1614] to-[#2C211B] text-[#F3EFE7] py-20 md:py-28 shadow-2xl w-full">
+        <!-- Abstract background glow -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-[#B87A44] rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse-slow"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-[#8C6D53] rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
+
+        <div class="relative max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-center gap-12 z-10">
+            
+            <!-- Profile Picture -->
+            <div class="relative group shrink-0">
+                <div class="absolute inset-0 bg-gradient-to-tr from-[#B87A44] to-[#E5B98D] rounded-full blur-xl opacity-40 group-hover:opacity-70 transition duration-500 scale-105"></div>
+                <img 
+                    src="profile pic_2.jpg" 
+                    alt="Daneen Majeed Valiya Peedikakkal" 
+                    onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Daneen+Majeed+Valiya+Peedikakkal&background=241E1A&color=B87A44&size=512';"
+                    style="image-rendering: high-quality;"
+                    class="relative w-52 h-52 md:w-64 md:h-64 object-cover rounded-full border-4 border-[#3A312B] shadow-2xl transition-transform duration-500 hover:scale-105 hover:border-[#B87A44]"
+                >
+            </div>
+
+            <!-- Intro Text -->
+            <div class="flex-1 text-center md:text-left space-y-6">
+                <div>
+                    <div class="inline-block px-3 py-1 mb-4 bg-[#B87A44]/20 border border-[#B87A44]/40 text-[#E5B98D] rounded-full text-xs font-bold tracking-widest uppercase">
+                        Portfolio 2026
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight mb-3 text-transparent bg-clip-text bg-gradient-to-r from-white via-[#F3EFE7] to-[#C8A07D]">
+                        Daneen Majeed Valiya Peedikakkal
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-medium text-[#A89F95]">
+                        Cloud Computing & AI Student <span class="text-[#B87A44] mx-2">|</span> Operations Specialist
+                    </h2>
+                </div>
+                
+                <p class="text-lg text-[#C8C1B9] leading-relaxed max-w-2xl font-light">
+                    I bridge the gap between technical innovation and structured execution. 
+                    With a foundation in Cloud Computing and AI, and a proven track record of 
+                    leading large-scale university events, I drive results through operational discipline and technology.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
+                    <a href="mailto:daneenmajeed@gmail.com" class="flex items-center gap-2 px-5 py-2.5 bg-[#B87A44] hover:bg-[#A36836] text-white rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-[#B87A44]/30 hover:-translate-y-0.5">
+                        <i class="fa-solid fa-envelope"></i> Email Me
+                    </a>
+                    <div class="flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 backdrop-blur-sm rounded-full text-sm font-medium shadow-sm">
+                        <i class="fa-solid fa-location-dot text-[#B87A44]"></i> Chennai, India
+                    </div>
+                    <a href="https://github.com/daneenmajeed" target="_blank" rel="noreferrer" class="p-3 bg-white/5 border border-white/10 backdrop-blur-sm rounded-full hover:bg-white/10 hover:text-[#B87A44] transition-all shadow-sm hover:-translate-y-0.5">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/daneenmajeed" target="_blank" rel="noreferrer" class="p-3 bg-white/5 border border-white/10 backdrop-blur-sm rounded-full hover:bg-white/10 hover:text-[#B87A44] transition-all shadow-sm hover:-translate-y-0.5">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 -mt-8 relative z-20">
+        
+        <!-- Tab Navigation Buttons -->
+        <div class="flex flex-wrap justify-center gap-3 bg-white p-2 rounded-2xl shadow-xl border border-[#E8E1D5] mb-12">
+            <button id="btn-tech" onclick="switchTab('tech')" class="tab-btn active bg-[#241E1A] text-[#E5B98D] shadow-md scale-105 flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300">
+                <i class="fa-solid fa-server tab-icon text-[#B87A44]"></i> Tech & Cloud
+            </button>
+            <button id="btn-ops" onclick="switchTab('ops')" class="tab-btn bg-transparent text-[#7A7165] hover:bg-[#F3EFE7] hover:text-[#241E1A] flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300">
+                <i class="fa-solid fa-briefcase tab-icon text-[#A89F95]"></i> Operations & Leadership
+            </button>
+            <button id="btn-education" onclick="switchTab('education')" class="tab-btn bg-transparent text-[#7A7165] hover:bg-[#F3EFE7] hover:text-[#241E1A] flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300">
+                <i class="fa-solid fa-graduation-cap tab-icon text-[#A89F95]"></i> Education & Certs
+            </button>
+            <button id="btn-hobbies" onclick="switchTab('hobbies')" class="tab-btn bg-transparent text-[#7A7165] hover:bg-[#F3EFE7] hover:text-[#241E1A] flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300">
+                <i class="fa-solid fa-palette tab-icon text-[#A89F95]"></i> Hobbies
+            </button>
+        </div>
+
+        <!-- TECH & CLOUD SECTION -->
+        <div id="tech" class="tab-content active space-y-12">
+            <section>
+                <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
+                    <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-code"></i></span> 
+                    Technical Skills
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Cloud -->
+                    <div class="bg-white p-7 rounded-3xl border-b-4 border-b-[#B87A44] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="p-2 bg-[#F3EFE7] rounded-lg text-[#8C6D53]"><i class="fa-solid fa-cloud"></i></div>
+                            <h4 class="font-bold text-[#241E1A] text-xl">Cloud & Architecture</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">Amazon Web Services (AWS)</span>
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">Oracle Cloud (OCI)</span>
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">Multi-Cloud Concepts</span>
+                        </div>
+                    </div>
+
+                    <!-- Programming -->
+                    <div class="bg-white p-7 rounded-3xl border-b-4 border-b-[#B87A44] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="p-2 bg-[#F3EFE7] rounded-lg text-[#8C6D53]"><i class="fa-solid fa-terminal"></i></div>
+                            <h4 class="font-bold text-[#241E1A] text-xl">Programming & Core CS</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">Python</span>
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">C</span>
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">HTML5 / CSS3</span>
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">Data Structures</span>
+                        </div>
+                    </div>
+
+                    <!-- AI & Data -->
+                    <div class="bg-white p-7 rounded-3xl border-b-4 border-b-[#B87A44] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="p-2 bg-[#F3EFE7] rounded-lg text-[#8C6D53]"><i class="fa-solid fa-brain"></i></div>
+                            <h4 class="font-bold text-[#241E1A] text-xl">AI & Data Science</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">Prompt Engineering</span>
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">AI-Assisted Dev</span>
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">Data Science Fundamentals</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="bg-white p-7 rounded-3xl border-b-4 border-b-[#B87A44] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="p-2 bg-[#F3EFE7] rounded-lg text-[#8C6D53]"><i class="fa-solid fa-wrench"></i></div>
+                            <h4 class="font-bold text-[#241E1A] text-xl">Tools & Software</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">Git / GitHub</span>
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">AutoCAD</span>
+                            <span class="px-4 py-2 bg-[#F3EFE7] text-[#5C544D] border border-[#E8DCCB] rounded-lg text-sm font-bold">Canva</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
+                    <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-laptop-code"></i></span> 
+                    Featured Projects
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-[#E8E1D5] hover:shadow-2xl hover:-translate-y-2 transition-all group relative overflow-hidden flex flex-col">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#B87A44]/10 to-transparent rounded-bl-full"></div>
+                        <div class="flex justify-between items-start mb-5 relative z-10">
+                            <h4 class="text-2xl font-bold text-[#241E1A]">FIMENTOR</h4>
+                            <a href="https://fi-mentor-pbhz3o2h1-neen1.vercel.app/" target="_blank" rel="noreferrer" class="p-2 bg-[#F3EFE7] text-[#7A7165] rounded-full hover:bg-[#B87A44] hover:text-white transition-colors">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                        <p class="text-[#5C544D] mb-8 text-sm leading-relaxed relative z-10 flex-grow">
+                            An AI-Powered Financial Mentorship Platform prototype built to improve access to financial guidance for underserved users. Presented at the Google Agentic AI Workshop.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto relative z-10">
+                            <span class="px-4 py-1.5 bg-[#241E1A] text-[#E5B98D] rounded-full text-xs font-bold shadow-sm">HTML</span>
+                            <span class="px-4 py-1.5 bg-[#E8DCCB] text-[#7A5A40] rounded-full text-xs font-bold shadow-sm">AI-Assisted Dev</span>
+                            <span class="px-4 py-1.5 bg-[#E8DCCB] text-[#7A5A40] rounded-full text-xs font-bold shadow-sm">UI/UX</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-[#E8E1D5] hover:shadow-2xl hover:-translate-y-2 transition-all group relative overflow-hidden flex flex-col">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#B87A44]/10 to-transparent rounded-bl-full"></div>
+                        <div class="flex justify-between items-start mb-5 relative z-10">
+                            <h4 class="text-2xl font-bold text-[#241E1A]">AI Web Dev</h4>
+                            <div class="p-2 bg-gradient-to-br from-[#B87A44] to-[#8C6D53] text-white rounded-full shadow-md"><i class="fa-solid fa-star"></i></div>
+                        </div>
+                        <p class="text-[#5C544D] mb-8 text-sm leading-relaxed relative z-10 flex-grow">
+                            Designed and built a complete, functional website using AI-assisted development tools and advanced prompt-engineering techniques during the Build with AI-Saudi Arabia workshop.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto relative z-10">
+                            <span class="px-4 py-1.5 bg-[#E8DCCB] text-[#7A5A40] rounded-full text-xs font-bold shadow-sm">Prompt Engineering</span>
+                            <span class="px-4 py-1.5 bg-[#E8DCCB] text-[#7A5A40] rounded-full text-xs font-bold shadow-sm">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- OPERATIONS & LEADERSHIP SECTION -->
+        <div id="ops" class="tab-content space-y-16">
+            <!-- Operations Grid -->
+            <section>
+                <h3 class="text-3xl font-extrabold mb-10 flex items-center gap-3 text-[#241E1A]">
+                    <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-network-wired"></i></span> 
+                    Operations & Event Management
+                </h3>
+                
+                <!-- Stacked Layout Cards -->
+                <div class="space-y-6">
+                    <!-- Job 1 -->
+                    <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
+                        <div class="shrink-0">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#241E1A] to-[#3A312B] text-[#E5B98D] shadow-lg border border-[#E8DCCB]/20">
+                                <i class="fa-solid fa-bullhorn text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#241E1A] text-[#E5B98D]">ELIGEN Private Limited</div>
+                            <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Lead Intern – Public Relations & Publicity</h4>
+                            <div class="text-[#B87A44] font-bold text-sm mb-5">Sept 2025 - Dec 2025</div>
+                            <ul class="space-y-3 text-sm text-[#5C544D]">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Led outreach and publicity initiatives aimed at strengthening relationships between the organization and university communities.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Collaborated with student representatives and institutional stakeholders to improve engagement.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Planned and executed communication campaigns that increased organizational visibility.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
+                        <div class="shrink-0">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F3EFE7] to-[#E8DCCB] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
+                                <i class="fa-solid fa-users text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">SRMIST</div>
+                            <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Student Discipline Lead</h4>
+                            <div class="text-[#B87A44] font-bold text-sm mb-5">SRM LITFEST 3.0</div>
+                            <ul class="space-y-3 text-sm text-[#5C544D]">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Served as one of three lead coordinators responsible for student discipline and audience management.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated seating logistics across two major venues: the G.K. Grand Auditorium and University Building.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Addressed real-time operational challenges to maintain event flow and organizational efficiency.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
+                        <div class="shrink-0">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F3EFE7] to-[#E8DCCB] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
+                                <i class="fa-solid fa-chalkboard-user text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">SRMIST</div>
+                            <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Lead Coordinator</h4>
+                            <div class="text-[#B87A44] font-bold text-sm mb-5">Project Based Learning (PBL) Presentation Day</div>
+                            <ul class="space-y-3 text-sm text-[#5C544D]">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Led the planning and execution of a university-wide academic showcase.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated participant scheduling, project allocations, and overall event logistics.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Served as a key point of contact between participants, judges, and faculty members.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 4 -->
+                    <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
+                        <div class="shrink-0">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F3EFE7] to-[#E8DCCB] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
+                                <i class="fa-solid fa-microchip text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">CINTEL Next-GEN AI Club</div>
+                            <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Management Team Member</h4>
+                            <div class="text-[#B87A44] font-bold text-sm mb-5">Next-GEN AI Hackathon</div>
+                            <ul class="space-y-3 text-sm text-[#5C544D]">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Played a key role in planning and executing a university-level hackathon focused on innovation.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Acted as a central communication bridge between multiple organizational domains.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 5 -->
+                    <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
+                        <div class="shrink-0">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F3EFE7] to-[#E8DCCB] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
+                                <i class="fa-solid fa-earth-americas text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">Int'l Student Chapter, DIR</div>
+                            <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Operations Team Member</h4>
+                            <div class="text-[#B87A44] font-bold text-sm mb-5">International Students' Day</div>
+                            <ul class="space-y-3 text-sm text-[#5C544D]">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated closely with performers, organizers, and technical teams to ensure seamless transitions.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Managed participant readiness and backstage logistics throughout the program.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 6 -->
+                    <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
+                        <div class="shrink-0">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F3EFE7] to-[#E8DCCB] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
+                                <i class="fa-solid fa-flag text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">SRMIST</div>
+                            <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Operations Team Member</h4>
+                            <div class="text-[#B87A44] font-bold text-sm mb-5">SRMMUN 2025</div>
+                            <ul class="space-y-3 text-sm text-[#5C544D]">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Supported operational execution of a university-wide Model United Nations conference.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Worked closely with Executive Board members to ensure sessions ran efficiently.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Creative & Early Leadership -->
+            <section>
+                <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
+                    <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-star"></i></span> 
+                    Creative & Early Leadership
+                </h3>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Creative 1 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
+                        <div class="flex items-start gap-5 mb-6">
+                            <div class="p-4 bg-gradient-to-br from-[#241E1A] to-[#3A312B] rounded-2xl text-[#E5B98D] shadow-inner shrink-0">
+                                <i class="fa-solid fa-masks-theater text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Creative Leadership</div>
+                                <h4 class="font-bold text-xl text-[#241E1A] leading-tight mb-1">Assistant Director</h4>
+                                <p class="text-sm font-bold text-[#B87A44]">Zephyr Playhouse Theatre Production</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-[#5C544D] flex-grow">
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Served as Assistant Director for a theatre production under Zephyr Playhouse.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Guided and mentored performers with limited prior theatre experience.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Managed schedules, rehearsals, and timelines to ensure readiness for final performance.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Creative 2 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
+                        <div class="flex items-start gap-5 mb-6">
+                            <div class="p-4 bg-gradient-to-br from-[#241E1A] to-[#3A312B] rounded-2xl text-[#E5B98D] shadow-inner shrink-0">
+                                <i class="fa-solid fa-microphone-lines text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Public Speaking</div>
+                                <h4 class="font-bold text-xl text-[#241E1A] leading-tight mb-1">Event Host (MC)</h4>
+                                <p class="text-sm font-bold text-[#B87A44]">Multiple Formal University Events</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-[#5C544D] flex-grow">
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Hosted and moderated multiple formal university events attended by faculty and guests.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Managed stage proceedings, speaker transitions, and audience engagement.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Demonstrated strong communication and adaptability in high-visibility environments.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Creative 3 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
+                        <div class="flex items-start gap-5 mb-6">
+                            <div class="p-4 bg-[#F3EFE7] border border-[#E8DCCB] rounded-2xl text-[#B87A44] shrink-0">
+                                <i class="fa-solid fa-crown text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Early Leadership</div>
+                                <h4 class="font-bold text-xl text-[#241E1A] leading-tight mb-1">Head Girl</h4>
+                                <p class="text-sm font-bold text-[#B87A44]">International Indian School Jeddah</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-[#5C544D] flex-grow">
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Represented the student body and served as a liaison between students and administration.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Led initiatives focused on student welfare, discipline, and school-wide engagement.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Creative 4 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col h-full">
+                        <div class="flex items-start gap-5 mb-6">
+                            <div class="p-4 bg-[#F3EFE7] border border-[#E8DCCB] rounded-2xl text-[#B87A44] shrink-0">
+                                <i class="fa-solid fa-book-open text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Early Leadership</div>
+                                <h4 class="font-bold text-xl text-[#241E1A] leading-tight mb-1">Literary Secretary</h4>
+                                <p class="text-sm font-bold text-[#B87A44]">International Indian School Jeddah</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-[#5C544D] flex-grow">
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Organized literary competitions, debates, and public speaking initiatives.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Fostered a culture of communication, critical thinking, and creativity.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- EDUCATION & CERTS SECTION -->
+        <div id="education" class="tab-content grid md:grid-cols-12 gap-10">
+            <!-- Education -->
+            <div class="md:col-span-5 space-y-6">
+                <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
+                    <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-graduation-cap"></i></span> 
+                    Education
+                </h3>
+                
+                <div class="bg-white p-7 rounded-3xl shadow-lg border border-[#E8E1D5] relative overflow-hidden group hover:border-[#B87A44]/50 transition-colors">
+                    <div class="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-[#B87A44] to-[#8C6D53]"></div>
+                    <div class="inline-block px-3 py-1 bg-[#241E1A] text-[#E5B98D] rounded-lg text-xs font-bold mb-3 shadow-sm">2025 - 2029 (Expected)</div>
+                    <h4 class="text-xl font-bold text-[#241E1A] leading-tight mb-2">B.Tech Computer Science</h4>
+                    <p class="text-[#B87A44] text-sm font-bold mb-2">Specialization: Cloud Computing</p>
+                    <p class="text-[#7A7165] text-sm font-medium">SRM Institute of Science and Technology • Chennai</p>
+                </div>
+
+                <div class="bg-white p-7 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-md transition-shadow">
+                    <div class="inline-block px-3 py-1 bg-[#E8DCCB] text-[#7A5A40] rounded-lg text-xs font-bold mb-3">2023 - 2025</div>
+                    <h4 class="text-lg font-bold text-[#241E1A] leading-tight mb-2">Senior Secondary Education</h4>
+                    <p class="text-[#7A7165] text-sm font-medium">Sree Gokulam Public School • Calicut, India</p>
+                </div>
+
+                <div class="bg-white p-7 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-md transition-shadow">
+                    <div class="inline-block px-3 py-1 bg-[#E8DCCB] text-[#7A5A40] rounded-lg text-xs font-bold mb-3">2011 - 2023</div>
+                    <h4 class="text-lg font-bold text-[#241E1A] leading-tight mb-2">Primary & Secondary</h4>
+                    <p class="text-[#7A7165] text-sm font-medium">International Indian School Jeddah • KSA</p>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="md:col-span-7">
+                <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
+                    <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-award"></i></span> 
+                    Certifications
+                </h3>
+                
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <!-- Cert Items -->
+                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-sm text-[#241E1A] leading-tight">Oracle Certified Associate</h5>
+                            <p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Oracle</p>
+                        </div>
+                    </div>
+                    <!-- Repeated pattern for other certs -->
+                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Python Essentials 1</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Cisco Networking</p></div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Intro to Modern AI</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Cisco Networking</p></div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Intro to Data Science</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Cisco Networking</p></div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Intro to Cloud Computing</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Udemy</p></div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Claude 101</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Anthropic</p></div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">AI Fluency</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Anthropic</p></div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Agentic AI Workshop</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Google</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HOBBIES SECTION -->
+        <div id="hobbies" class="tab-content space-y-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h3 class="text-3xl md:text-4xl font-extrabold text-[#241E1A] mb-4">Beyond the Code & Operations</h3>
+                <p class="text-[#5C544D] text-lg leading-relaxed">A glimpse into my creative pursuits, digital worlds, and physical activities that keep me balanced, inspired, and constantly learning.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dance Card -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-2 bg-gradient-to-br from-[#241E1A] to-[#3A312B] p-8 rounded-3xl text-white shadow-xl relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-[#B87A44] rounded-full mix-blend-multiply filter blur-[80px] opacity-30 group-hover:opacity-60 transition-opacity duration-700"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 shadow-inner border border-white/20">
+                            <i class="fa-solid fa-music text-2xl text-[#E5B98D]"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-3 text-white">Bharatanatyam</h4>
+                        <p class="text-[#C8C1B9] mb-6 leading-relaxed max-w-xl">
+                            7+ years of dedicated training and practice in Indian classical dance, culminating in multiple stage performances. This art form has been foundational in teaching me discipline, cultural expression, and rhythmic storytelling.
+                        </p>
+                        <div class="flex gap-2">
+                            <div class="inline-block px-4 py-2 bg-[#B87A44] rounded-full text-xs font-bold text-white shadow-md">Classical Dance</div>
+                            <div class="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold text-[#E5B98D]">7 Years Exp.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MUN & Speaking -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-[#E8E1D5] hover:shadow-2xl hover:-translate-y-1 transition-all relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#E8DCCB] to-transparent rounded-bl-full z-0 opacity-50"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-[#F3EFE7] text-[#B87A44] rounded-2xl flex items-center justify-center mb-6 border border-[#E8E1D5]">
+                            <i class="fa-solid fa-microphone text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-[#241E1A]">The Podium & Diplomacy</h4>
+                        <p class="text-[#5C544D] text-sm mb-6 leading-relaxed">
+                            Passionate about public speaking, debating, and hosting events. Jumped into Model United Nations (MUN) in Jan 2026 and have already attended 4 conferences to debate global issues.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-[#E8DCCB] text-[#7A5A40] rounded-full text-xs font-bold">Model UN</span>
+                            <span class="px-3 py-1.5 bg-[#E8DCCB] text-[#7A5A40] rounded-full text-xs font-bold">Oratory</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gaming -->
+                <div class="col-span-1 md:col-span-2 bg-white p-8 rounded-3xl shadow-lg border border-[#E8E1D5] hover:shadow-2xl hover:-translate-y-1 transition-all relative overflow-hidden group">
+                    <div class="absolute -bottom-16 -right-16 w-56 h-56 bg-[#B87A44]/10 rounded-full blur-3xl group-hover:bg-[#B87A44]/20 transition-colors duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 bg-[#F3EFE7] text-[#B87A44] rounded-2xl flex items-center justify-center border border-[#E8E1D5]">
+                                <i class="fa-solid fa-gamepad text-xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-3 text-[#241E1A]">Gaming & Immersive Lore</h4>
+                        <p class="text-[#5C544D] mb-6 leading-relaxed max-w-2xl">
+                            An avid player of rich, story-driven gacha and RPG titles. I love exploring immersive worlds, diving deep into character mechanics, and analyzing game lore and beautifully crafted soundtracks.
+                        </p>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-4 py-2 bg-[#241E1A] text-[#E5B98D] rounded-full text-xs font-bold shadow-sm">✨ Honkai: Star Rail</span>
+                            <span class="px-4 py-2 bg-[#241E1A] text-[#E5B98D] rounded-full text-xs font-bold shadow-sm">🗡️ Genshin Impact</span>
+                            <span class="px-4 py-2 bg-[#241E1A] text-[#E5B98D] rounded-full text-xs font-bold shadow-sm">🌌 Love and Deepspace</span>
+                            <span class="px-4 py-2 bg-[#241E1A] text-[#E5B98D] rounded-full text-xs font-bold shadow-sm">🌊 Wuthering Waves</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fiction & Storytelling -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-[#E8E1D5] hover:shadow-2xl hover:-translate-y-1 transition-all">
+                    <div class="w-12 h-12 bg-[#F3EFE7] text-[#B87A44] rounded-2xl flex items-center justify-center mb-6 border border-[#E8E1D5]">
+                        <i class="fa-solid fa-book-heart text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-[#241E1A]">Fiction & Reading</h4>
+                    <p class="text-[#5C544D] text-sm mb-6 leading-relaxed">
+                        Immersed in fictional worlds through romance novels, manga, manhwa, and audiobooks. I love engaging in deep dives into character analysis and storytelling.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-[#F3EFE7] border border-[#E8DCCB] text-[#5C544D] rounded-full text-xs font-bold">Manhwa</span>
+                        <span class="px-3 py-1.5 bg-[#F3EFE7] border border-[#E8DCCB] text-[#5C544D] rounded-full text-xs font-bold">Romance Novels</span>
+                    </div>
+                </div>
+
+                <!-- Art & Creative -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-[#E8E1D5] hover:shadow-2xl hover:-translate-y-1 transition-all">
+                    <div class="w-12 h-12 bg-[#F3EFE7] text-[#B87A44] rounded-2xl flex items-center justify-center mb-6 border border-[#E8E1D5]">
+                        <i class="fa-solid fa-pencil text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-[#241E1A]">Art & Creative Expression</h4>
+                    <p class="text-[#5C544D] text-sm mb-6 leading-relaxed">
+                        Pencil sketching 2D characters with a focus on light anime-style art. I also channel creativity into writing poetry and active participation in literature clubs.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-[#E8DCCB] text-[#7A5A40] rounded-full text-xs font-bold">Sketching</span>
+                        <span class="px-3 py-1.5 bg-[#E8DCCB] text-[#7A5A40] rounded-full text-xs font-bold">Poetry</span>
+                    </div>
+                </div>
+                
+                 <!-- Recreation & Lifestyle -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-[#E8E1D5] hover:shadow-2xl hover:-translate-y-1 transition-all">
+                    <div class="w-12 h-12 bg-[#F3EFE7] text-[#B87A44] rounded-2xl flex items-center justify-center mb-6 border border-[#E8E1D5]">
+                        <i class="fa-solid fa-person-swimming text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-[#241E1A]">Recreation & Lifestyle</h4>
+                    <p class="text-[#5C544D] text-sm mb-6 leading-relaxed">
+                        Balancing the digital with the physical. I enjoy swimming for fitness and active relaxation, while also exploring content creation and social media strategies.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-[#E8DCCB] text-[#7A5A40] rounded-full text-xs font-bold">Swimming</span>
+                        <span class="px-3 py-1.5 bg-[#E8DCCB] text-[#7A5A40] rounded-full text-xs font-bold">Content Creation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // JavaScript logic to handle the interactive tab switching
+        function switchTab(tabId) {
+            // 1. Hide all tab content
+            const allContent = document.querySelectorAll('.tab-content');
+            allContent.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // 2. Show the selected tab content
+            const selectedContent = document.getElementById(tabId);
+            selectedContent.classList.add('active');
+
+            // 3. Reset all buttons to default state
+            const allBtns = document.querySelectorAll('.tab-btn');
+            allBtns.forEach(btn => {
+                // Remove active classes
+                btn.classList.remove('bg-[#241E1A]', 'text-[#E5B98D]', 'shadow-md', 'scale-105', 'active');
+                // Add inactive classes
+                btn.classList.add('bg-transparent', 'text-[#7A7165]');
+                
+                // Reset icon color
+                const icon = btn.querySelector('.tab-icon');
+                icon.classList.remove('text-[#B87A44]');
+                icon.classList.add('text-[#A89F95]');
+            });
+
+            // 4. Style the clicked button as active
+            const activeBtn = document.getElementById('btn-' + tabId);
+            
+            // Remove inactive classes
+            activeBtn.classList.remove('bg-transparent', 'text-[#7A7165]');
+            // Add active classes
+            activeBtn.classList.add('bg-[#241E1A]', 'text-[#E5B98D]', 'shadow-md', 'scale-105', 'active');
+            
+            // Highlight icon
+            const activeIcon = activeBtn.querySelector('.tab-icon');
+            activeIcon.classList.remove('text-[#A89F95]');
+            activeIcon.classList.add('text-[#B87A44]');
+        }
+    </script>
+</body>
+</html>

@@ -19,25 +19,20 @@
             font-family: 'Inter', sans-serif;
         }
         
-        /* Tab functionality */
-        .tab-content {
+        /* Bulletproof Tab Switching */
+        .tab-panel {
             display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            animation: fadeIn 0.5s ease-out forwards;
         }
         
-        .tab-content.active {
+        .tab-panel.active {
             display: block;
-            opacity: 1;
-            transform: translateY(0);
-            animation: slideUpFade 0.6s ease forwards;
         }
 
-        @keyframes slideUpFade {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(10px);
             }
             to {
                 opacity: 1;
@@ -117,7 +112,7 @@
     <main class="max-w-5xl mx-auto px-6 -mt-8 relative z-20">
         
         <!-- Tab Navigation Buttons -->
-        <div class="flex flex-wrap justify-center gap-3 bg-white p-2 rounded-2xl shadow-xl border border-[#E8E1D5] mb-12">
+        <div class="flex flex-wrap justify-center gap-3 bg-white p-2 rounded-2xl shadow-xl border border-[#E8E1D5] mb-8">
             <button id="btn-tech" onclick="switchTab('tech')" class="tab-btn active bg-[#241E1A] text-[#E5B98D] shadow-md scale-105 flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300">
                 <i class="fa-solid fa-server tab-icon text-[#B87A44]"></i> Tech & Cloud
             </button>
@@ -132,9 +127,8 @@
             </button>
         </div>
 
-        <!-- TECH & CLOUD SECTION -->
-        <div id="tech" class="tab-content active space-y-12">
-            <section>
+        <div id="tech" class="tab-panel active">
+            <div class="mb-12">
                 <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
                     <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-code"></i></span> 
                     Technical Skills
@@ -193,9 +187,9 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section>
+            <div>
                 <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
                     <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-laptop-code"></i></span> 
                     Featured Projects
@@ -236,19 +230,16 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
 
-        <!-- OPERATIONS & LEADERSHIP SECTION -->
-        <div id="ops" class="tab-content space-y-16">
-            <!-- Operations Grid -->
-            <section>
+        <div id="ops" class="tab-panel">
+            <div class="mb-16">
                 <h3 class="text-3xl font-extrabold mb-10 flex items-center gap-3 text-[#241E1A]">
                     <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-network-wired"></i></span> 
                     Operations & Event Management
                 </h3>
                 
-                <!-- Stacked Layout Cards -->
                 <div class="space-y-6">
                     <!-- Job 1 -->
                     <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
@@ -260,11 +251,12 @@
                         <div>
                             <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#241E1A] text-[#E5B98D]">ELIGEN Private Limited</div>
                             <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Lead Intern – Public Relations & Publicity</h4>
-                            <div class="text-[#B87A44] font-bold text-sm mb-5">Sept 2025 - Dec 2025</div>
-                            <ul class="space-y-3 text-sm text-[#5C544D]">
+                            <ul class="space-y-3 text-sm text-[#5C544D] mt-4">
                                 <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Led outreach and publicity initiatives aimed at strengthening relationships between the organization and university communities.</li>
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Collaborated with student representatives and institutional stakeholders to improve engagement.</li>
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Planned and executed communication campaigns that increased organizational visibility.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Collaborated with student representatives and institutional stakeholders to improve engagement and participation across various initiatives.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Planned and executed communication campaigns that increased organizational visibility and expanded outreach efforts.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Worked closely with team members to coordinate promotional activities and ensure the successful delivery of engagement programs.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Developed strong skills in stakeholder management, strategic communication, and professional relationship building.</li>
                             </ul>
                         </div>
                     </div>
@@ -272,18 +264,19 @@
                     <!-- Job 2 -->
                     <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
                         <div class="shrink-0">
-                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F3EFE7] to-[#E8DCCB] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#F3EFE7] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
                                 <i class="fa-solid fa-users text-2xl"></i>
                             </div>
                         </div>
                         <div>
-                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">SRMIST</div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">SRM LITFEST 3.0</div>
                             <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Student Discipline Lead</h4>
-                            <div class="text-[#B87A44] font-bold text-sm mb-5">SRM LITFEST 3.0</div>
-                            <ul class="space-y-3 text-sm text-[#5C544D]">
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Served as one of three lead coordinators responsible for student discipline and audience management.</li>
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated seating logistics across two major venues: the G.K. Grand Auditorium and University Building.</li>
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Addressed real-time operational challenges to maintain event flow and organizational efficiency.</li>
+                            <ul class="space-y-3 text-sm text-[#5C544D] mt-4">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Served as one of three lead coordinators responsible for student discipline, audience management, and operational execution during SRM LITFEST 3.0, one of SRM University's flagship cultural and literary festivals.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated audience movement, seating logistics, and crowd management across two major venues: the G.K. Grand Auditorium and the University Building.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Led volunteers and worked closely with faculty coordinators, organizers, and participants to ensure a smooth and engaging festival experience.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Addressed real-time operational challenges and implemented effective solutions to maintain event flow and organizational efficiency.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Contributed to the successful management of large audiences over multiple event days while maintaining a professional and welcoming environment.</li>
                             </ul>
                         </div>
                     </div>
@@ -291,18 +284,19 @@
                     <!-- Job 3 -->
                     <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
                         <div class="shrink-0">
-                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F3EFE7] to-[#E8DCCB] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#F3EFE7] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
                                 <i class="fa-solid fa-chalkboard-user text-2xl"></i>
                             </div>
                         </div>
                         <div>
-                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">SRMIST</div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">Project Based Learning Day</div>
                             <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Lead Coordinator</h4>
-                            <div class="text-[#B87A44] font-bold text-sm mb-5">Project Based Learning (PBL) Presentation Day</div>
-                            <ul class="space-y-3 text-sm text-[#5C544D]">
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Led the planning and execution of a university-wide academic showcase.</li>
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated participant scheduling, project allocations, and overall event logistics.</li>
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Served as a key point of contact between participants, judges, and faculty members.</li>
+                            <ul class="space-y-3 text-sm text-[#5C544D] mt-4">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Led the planning and execution of a university-wide academic showcase featuring student project presentations and faculty evaluations.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated participant scheduling, project allocations, venue readiness, and overall event logistics.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Served as a key point of contact between participants, judges, faculty members, and organizing teams to ensure seamless communication.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Oversaw volunteer teams responsible for participant support, event flow, and operational assistance throughout the event.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Managed final presentations, awards distribution, and closing activities while ensuring a positive experience for all stakeholders.</li>
                             </ul>
                         </div>
                     </div>
@@ -310,17 +304,19 @@
                     <!-- Job 4 -->
                     <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
                         <div class="shrink-0">
-                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F3EFE7] to-[#E8DCCB] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#F3EFE7] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
                                 <i class="fa-solid fa-microchip text-2xl"></i>
                             </div>
                         </div>
                         <div>
-                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">CINTEL Next-GEN AI Club</div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">Next-GEN AI Club</div>
                             <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Management Team Member</h4>
-                            <div class="text-[#B87A44] font-bold text-sm mb-5">Next-GEN AI Hackathon</div>
-                            <ul class="space-y-3 text-sm text-[#5C544D]">
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Played a key role in planning and executing a university-level hackathon focused on innovation.</li>
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Acted as a central communication bridge between multiple organizational domains.</li>
+                            <ul class="space-y-3 text-sm text-[#5C544D] mt-4">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Played a key role in planning and executing a university-level hackathon focused on innovation and emerging technologies.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated participant registration, team onboarding, venue preparation, and event logistics to ensure a smooth participant experience.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Acted as a central communication bridge between multiple organizational domains, facilitating collaboration and alignment among teams.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Worked closely with organizers, volunteers, and stakeholders to resolve operational challenges and maintain event efficiency.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Contributed to the successful delivery of the event through strong coordination, problem-solving, and cross-functional collaboration.</li>
                             </ul>
                         </div>
                     </div>
@@ -328,17 +324,19 @@
                     <!-- Job 5 -->
                     <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
                         <div class="shrink-0">
-                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F3EFE7] to-[#E8DCCB] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#F3EFE7] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
                                 <i class="fa-solid fa-earth-americas text-2xl"></i>
                             </div>
                         </div>
                         <div>
-                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">Int'l Student Chapter, DIR</div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">International Students' Day</div>
                             <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Operations Team Member</h4>
-                            <div class="text-[#B87A44] font-bold text-sm mb-5">International Students' Day</div>
-                            <ul class="space-y-3 text-sm text-[#5C544D]">
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated closely with performers, organizers, and technical teams to ensure seamless transitions.</li>
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Managed participant readiness and backstage logistics throughout the program.</li>
+                            <ul class="space-y-3 text-sm text-[#5C544D] mt-4">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Selected as one of two operations coordinators responsible for backstage management and event execution during International Students' Day.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated closely with performers, organizers, and technical teams to ensure seamless transitions and event flow.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Managed participant readiness, backstage logistics, and schedule adherence throughout the program.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Facilitated communication between stakeholders to address operational requirements and real-time challenges efficiently.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Contributed to the successful execution of an international cultural celebration that brought together students from diverse backgrounds.</li>
                             </ul>
                         </div>
                     </div>
@@ -346,25 +344,26 @@
                     <!-- Job 6 -->
                     <div class="bg-white p-7 md:p-8 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row gap-6">
                         <div class="shrink-0">
-                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F3EFE7] to-[#E8DCCB] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#F3EFE7] text-[#B87A44] shadow-md border border-[#E8DCCB]/50">
                                 <i class="fa-solid fa-flag text-2xl"></i>
                             </div>
                         </div>
                         <div>
-                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">SRMIST</div>
+                            <div class="inline-block px-3 py-1 rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-3 bg-[#E8DCCB] text-[#7A5A40]">SRMMUN 2025</div>
                             <h4 class="text-xl md:text-2xl font-bold text-[#241E1A] leading-tight mb-1">Operations Team Member</h4>
-                            <div class="text-[#B87A44] font-bold text-sm mb-5">SRMMUN 2025</div>
-                            <ul class="space-y-3 text-sm text-[#5C544D]">
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Supported operational execution of a university-wide Model United Nations conference.</li>
-                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Worked closely with Executive Board members to ensure sessions ran efficiently.</li>
+                            <ul class="space-y-3 text-sm text-[#5C544D] mt-4">
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Supported the operational execution of a university-wide Model United Nations conference involving delegates, Executive Board members, and organizing teams.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Assisted participants with logistics, navigation, and conference-related requirements to enhance delegate experience.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Coordinated committee resources, including documentation, stationery, technical equipment, and operational materials.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Worked closely with Executive Board members to ensure committee sessions ran efficiently and without disruptions.</li>
+                                <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1"><i class="fa-solid fa-angle-right"></i></span> Contributed to participant outreach and promotional efforts that increased awareness and engagement across campus.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- Creative & Early Leadership -->
-            <section>
+            <div>
                 <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
                     <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-star"></i></span> 
                     Creative & Early Leadership
@@ -377,15 +376,16 @@
                                 <i class="fa-solid fa-masks-theater text-2xl"></i>
                             </div>
                             <div>
-                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Creative Leadership</div>
+                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Zephyr Playhouse</div>
                                 <h4 class="font-bold text-xl text-[#241E1A] leading-tight mb-1">Assistant Director</h4>
-                                <p class="text-sm font-bold text-[#B87A44]">Zephyr Playhouse Theatre Production</p>
                             </div>
                         </div>
                         <ul class="space-y-3 text-sm text-[#5C544D] flex-grow">
-                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Served as Assistant Director for a theatre production under Zephyr Playhouse.</li>
-                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Guided and mentored performers with limited prior theatre experience.</li>
-                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Managed schedules, rehearsals, and timelines to ensure readiness for final performance.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Served as Assistant Director for a theatre production under Zephyr Playhouse, the theatre wing of Zephyr Club.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Collaborated with the directing team to oversee production planning, rehearsal coordination, and overall execution.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Guided and mentored performers with limited prior theatre experience, fostering confidence and teamwork throughout the process.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Managed schedules, rehearsals, and production timelines to ensure readiness for final performance.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Contributed to the successful delivery of a production that received positive recognition from university leadership.</li>
                         </ul>
                     </div>
 
@@ -396,15 +396,16 @@
                                 <i class="fa-solid fa-microphone-lines text-2xl"></i>
                             </div>
                             <div>
-                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Public Speaking</div>
-                                <h4 class="font-bold text-xl text-[#241E1A] leading-tight mb-1">Event Host (MC)</h4>
-                                <p class="text-sm font-bold text-[#B87A44]">Multiple Formal University Events</p>
+                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Multiple University Events</div>
+                                <h4 class="font-bold text-xl text-[#241E1A] leading-tight mb-1">MC & Event Host</h4>
                             </div>
                         </div>
                         <ul class="space-y-3 text-sm text-[#5C544D] flex-grow">
-                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Hosted and moderated multiple formal university events attended by faculty and guests.</li>
-                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Managed stage proceedings, speaker transitions, and audience engagement.</li>
-                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Demonstrated strong communication and adaptability in high-visibility environments.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Hosted and moderated multiple formal university events attended by students, faculty members, and invited guests.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Managed stage proceedings, speaker transitions, and audience engagement while maintaining a professional atmosphere.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Collaborated with organizing teams to ensure smooth event execution and adherence to program schedules.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Demonstrated strong communication, adaptability, and audience management skills in high-visibility environments.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Successfully handled live event changes while maintaining continuity and engagement throughout the program.</li>
                         </ul>
                     </div>
 
@@ -415,14 +416,14 @@
                                 <i class="fa-solid fa-crown text-2xl"></i>
                             </div>
                             <div>
-                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Early Leadership</div>
+                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Int'l Indian School Jeddah</div>
                                 <h4 class="font-bold text-xl text-[#241E1A] leading-tight mb-1">Head Girl</h4>
-                                <p class="text-sm font-bold text-[#B87A44]">International Indian School Jeddah</p>
                             </div>
                         </div>
                         <ul class="space-y-3 text-sm text-[#5C544D] flex-grow">
-                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Represented the student body and served as a liaison between students and administration.</li>
-                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Led initiatives focused on student welfare, discipline, and school-wide engagement.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Represented the student body and served as a liaison between students, faculty, and school administration.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Led initiatives focused on student welfare, discipline, and school-wide engagement activities.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Coordinated student participation in institutional events while promoting a positive and inclusive school environment.</li>
                         </ul>
                     </div>
 
@@ -433,104 +434,98 @@
                                 <i class="fa-solid fa-book-open text-2xl"></i>
                             </div>
                             <div>
-                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Early Leadership</div>
+                                <div class="inline-block px-3 py-1 bg-[#F3EFE7] text-[#5C544D] rounded-md text-[10px] font-extrabold tracking-widest uppercase mb-2 border border-[#E8DCCB]">Int'l Indian School Jeddah</div>
                                 <h4 class="font-bold text-xl text-[#241E1A] leading-tight mb-1">Literary Secretary</h4>
-                                <p class="text-sm font-bold text-[#B87A44]">International Indian School Jeddah</p>
                             </div>
                         </div>
                         <ul class="space-y-3 text-sm text-[#5C544D] flex-grow">
-                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Organized literary competitions, debates, and public speaking initiatives.</li>
-                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Fostered a culture of communication, critical thinking, and creativity.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Organized literary competitions, debates, and public speaking initiatives that encouraged student participation and creative expression.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Collaborated with faculty and student teams to plan and execute academic and cultural events.</li>
+                            <li class="flex items-start gap-3"><span class="text-[#B87A44] mt-1">•</span> Fostered a culture of communication, critical thinking, and creativity within the student community.</li>
                         </ul>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
 
-        <!-- EDUCATION & CERTS SECTION -->
-        <div id="education" class="tab-content grid md:grid-cols-12 gap-10">
-            <!-- Education -->
-            <div class="md:col-span-5 space-y-6">
-                <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
-                    <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-graduation-cap"></i></span> 
-                    Education
-                </h3>
-                
-                <div class="bg-white p-7 rounded-3xl shadow-lg border border-[#E8E1D5] relative overflow-hidden group hover:border-[#B87A44]/50 transition-colors">
-                    <div class="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-[#B87A44] to-[#8C6D53]"></div>
-                    <div class="inline-block px-3 py-1 bg-[#241E1A] text-[#E5B98D] rounded-lg text-xs font-bold mb-3 shadow-sm">2025 - 2029 (Expected)</div>
-                    <h4 class="text-xl font-bold text-[#241E1A] leading-tight mb-2">B.Tech Computer Science</h4>
-                    <p class="text-[#B87A44] text-sm font-bold mb-2">Specialization: Cloud Computing</p>
-                    <p class="text-[#7A7165] text-sm font-medium">SRM Institute of Science and Technology • Chennai</p>
+        <div id="education" class="tab-panel">
+            <div class="grid md:grid-cols-12 gap-10">
+                <!-- Education -->
+                <div class="md:col-span-5 space-y-6">
+                    <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
+                        <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-graduation-cap"></i></span> 
+                        Education
+                    </h3>
+                    
+                    <div class="bg-white p-7 rounded-3xl shadow-lg border border-[#E8E1D5] relative overflow-hidden group hover:border-[#B87A44]/50 transition-colors">
+                        <div class="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-[#B87A44] to-[#8C6D53]"></div>
+                        <div class="inline-block px-3 py-1 bg-[#241E1A] text-[#E5B98D] rounded-lg text-xs font-bold mb-3 shadow-sm">2025 - 2029 (Expected)</div>
+                        <h4 class="text-xl font-bold text-[#241E1A] leading-tight mb-2">B.Tech Computer Science</h4>
+                        <p class="text-[#B87A44] text-sm font-bold mb-2">Specialization: Cloud Computing</p>
+                        <p class="text-[#7A7165] text-sm font-medium">SRM Institute of Science and Technology • Chennai</p>
+                    </div>
+
+                    <div class="bg-white p-7 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-md transition-shadow">
+                        <div class="inline-block px-3 py-1 bg-[#E8DCCB] text-[#7A5A40] rounded-lg text-xs font-bold mb-3">2023 - 2025</div>
+                        <h4 class="text-lg font-bold text-[#241E1A] leading-tight mb-2">Senior Secondary Education</h4>
+                        <p class="text-[#7A7165] text-sm font-medium">Sree Gokulam Public School • Calicut, India</p>
+                    </div>
+
+                    <div class="bg-white p-7 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-md transition-shadow">
+                        <div class="inline-block px-3 py-1 bg-[#E8DCCB] text-[#7A5A40] rounded-lg text-xs font-bold mb-3">2011 - 2023</div>
+                        <h4 class="text-lg font-bold text-[#241E1A] leading-tight mb-2">Primary & Secondary</h4>
+                        <p class="text-[#7A7165] text-sm font-medium">International Indian School Jeddah • KSA</p>
+                    </div>
                 </div>
 
-                <div class="bg-white p-7 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-md transition-shadow">
-                    <div class="inline-block px-3 py-1 bg-[#E8DCCB] text-[#7A5A40] rounded-lg text-xs font-bold mb-3">2023 - 2025</div>
-                    <h4 class="text-lg font-bold text-[#241E1A] leading-tight mb-2">Senior Secondary Education</h4>
-                    <p class="text-[#7A7165] text-sm font-medium">Sree Gokulam Public School • Calicut, India</p>
-                </div>
-
-                <div class="bg-white p-7 rounded-3xl shadow-sm border border-[#E8E1D5] hover:shadow-md transition-shadow">
-                    <div class="inline-block px-3 py-1 bg-[#E8DCCB] text-[#7A5A40] rounded-lg text-xs font-bold mb-3">2011 - 2023</div>
-                    <h4 class="text-lg font-bold text-[#241E1A] leading-tight mb-2">Primary & Secondary</h4>
-                    <p class="text-[#7A7165] text-sm font-medium">International Indian School Jeddah • KSA</p>
-                </div>
-            </div>
-
-            <!-- Certifications -->
-            <div class="md:col-span-7">
-                <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
-                    <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-award"></i></span> 
-                    Certifications
-                </h3>
-                
-                <div class="grid sm:grid-cols-2 gap-5">
-                    <!-- Cert Items -->
-                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
-                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300">
-                            <i class="fa-solid fa-certificate"></i>
+                <!-- Certifications -->
+                <div class="md:col-span-7">
+                    <h3 class="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
+                        <span class="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><i class="fa-solid fa-award"></i></span> 
+                        Certifications
+                    </h3>
+                    
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <!-- Cert Items -->
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                            <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                            <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Oracle Certified Associate</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Oracle</p></div>
                         </div>
-                        <div>
-                            <h5 class="font-bold text-sm text-[#241E1A] leading-tight">Oracle Certified Associate</h5>
-                            <p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Oracle</p>
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                            <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                            <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Python Essentials 1</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Cisco Networking</p></div>
                         </div>
-                    </div>
-                    <!-- Repeated pattern for other certs -->
-                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
-                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
-                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Python Essentials 1</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Cisco Networking</p></div>
-                    </div>
-                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
-                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
-                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Intro to Modern AI</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Cisco Networking</p></div>
-                    </div>
-                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
-                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
-                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Intro to Data Science</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Cisco Networking</p></div>
-                    </div>
-                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
-                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
-                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Intro to Cloud Computing</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Udemy</p></div>
-                    </div>
-                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
-                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
-                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Claude 101</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Anthropic</p></div>
-                    </div>
-                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
-                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
-                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">AI Fluency</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Anthropic</p></div>
-                    </div>
-                    <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
-                        <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
-                        <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Agentic AI Workshop</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Google</p></div>
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                            <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                            <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Intro to Modern AI</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Cisco Networking</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                            <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                            <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Intro to Data Science</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Cisco Networking</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                            <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                            <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Intro to Cloud Computing</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Udemy</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                            <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                            <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Claude 101</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Anthropic</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                            <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                            <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">AI Fluency</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Anthropic</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-[#E8E1D5] hover:shadow-lg hover:-translate-y-1 transition-all group">
+                            <div class="w-12 h-12 rounded-full bg-[#F3EFE7] group-hover:bg-[#B87A44] group-hover:text-white flex items-center justify-center text-[#B87A44] shrink-0 transition-colors duration-300"><i class="fa-solid fa-certificate"></i></div>
+                            <div><h5 class="font-bold text-sm text-[#241E1A] leading-tight">Agentic AI Workshop</h5><p class="text-xs font-bold text-[#A38568] mt-1 uppercase tracking-wide">Google</p></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- HOBBIES SECTION -->
-        <div id="hobbies" class="tab-content space-y-10">
-            <div class="text-center max-w-3xl mx-auto mb-12">
+        <div id="hobbies" class="tab-panel">
+            <div class="text-center max-w-3xl mx-auto mb-10 mt-2">
                 <h3 class="text-3xl md:text-4xl font-extrabold text-[#241E1A] mb-4">Beyond the Code & Operations</h3>
                 <p class="text-[#5C544D] text-lg leading-relaxed">A glimpse into my creative pursuits, digital worlds, and physical activities that keep me balanced, inspired, and constantly learning.</p>
             </div>
@@ -643,44 +638,41 @@
     </main>
 
     <script>
-        // JavaScript logic to handle the interactive tab switching
+        // JavaScript logic to handle the interactive tab switching safely
         function switchTab(tabId) {
-            // 1. Hide all tab content
-            const allContent = document.querySelectorAll('.tab-content');
-            allContent.forEach(content => {
-                content.classList.remove('active');
+            // 1. Hide all tab content using the safe tab-panel class
+            const allPanels = document.querySelectorAll('.tab-panel');
+            allPanels.forEach(panel => {
+                panel.classList.remove('active');
             });
 
             // 2. Show the selected tab content
-            const selectedContent = document.getElementById(tabId);
-            selectedContent.classList.add('active');
+            const selectedPanel = document.getElementById(tabId);
+            selectedPanel.classList.add('active');
 
             // 3. Reset all buttons to default state
             const allBtns = document.querySelectorAll('.tab-btn');
             allBtns.forEach(btn => {
-                // Remove active classes
                 btn.classList.remove('bg-[#241E1A]', 'text-[#E5B98D]', 'shadow-md', 'scale-105', 'active');
-                // Add inactive classes
                 btn.classList.add('bg-transparent', 'text-[#7A7165]');
                 
-                // Reset icon color
                 const icon = btn.querySelector('.tab-icon');
-                icon.classList.remove('text-[#B87A44]');
-                icon.classList.add('text-[#A89F95]');
+                if(icon) {
+                    icon.classList.remove('text-[#B87A44]');
+                    icon.classList.add('text-[#A89F95]');
+                }
             });
 
             // 4. Style the clicked button as active
             const activeBtn = document.getElementById('btn-' + tabId);
-            
-            // Remove inactive classes
             activeBtn.classList.remove('bg-transparent', 'text-[#7A7165]');
-            // Add active classes
             activeBtn.classList.add('bg-[#241E1A]', 'text-[#E5B98D]', 'shadow-md', 'scale-105', 'active');
             
-            // Highlight icon
             const activeIcon = activeBtn.querySelector('.tab-icon');
-            activeIcon.classList.remove('text-[#A89F95]');
-            activeIcon.classList.add('text-[#B87A44]');
+            if(activeIcon) {
+                activeIcon.classList.remove('text-[#A89F95]');
+                activeIcon.classList.add('text-[#B87A44]');
+            }
         }
     </script>
 </body>

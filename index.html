@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-[#F3EFE7] text-[#292524] font-sans selection:bg-[#B87A44] selection:text-white pb-20 overflow-x-hidden w-full">
       
-      {/* HEADER & HERO SECTION - Dark Espresso Theme for high contrast */}
+      {}
       <header className="relative overflow-hidden bg-gradient-to-br from-[#241E1A] via-[#1A1614] to-[#2C211B] text-[#F3EFE7] py-20 md:py-28 shadow-2xl w-full">
         {/* Abstract background glow */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#B87A44] rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"></div>
@@ -64,7 +64,7 @@ const App = () => {
               leading large-scale university events, I drive results through operational discipline and technology.
             </p>
 
-            {/* Social Links - Dark Mode styled */}
+            {}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
               <a href="mailto:daneenmajeed@gmail.com" className="flex items-center gap-2 px-5 py-2.5 bg-[#B87A44] hover:bg-[#A36836] text-white rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-[#B87A44]/30 hover:-translate-y-0.5">
                 <Mail size={18} /> Email Me
@@ -108,10 +108,9 @@ const App = () => {
           })}
         </div>
 
-        {}
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
           
-          {/* --- TECH & CLOUD TAB --- */}
+          {}
           {activeTab === 'tech' && (
             <div className="space-y-12">
               <section>
@@ -204,7 +203,7 @@ const App = () => {
             </div>
           )}
 
-          {/* --- OPERATIONS & LEADERSHIP TAB --- */}
+          {}
           {activeTab === 'ops_leadership' && (
             <div className="space-y-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
               
@@ -332,7 +331,7 @@ const App = () => {
                 </div>
               </section>
 
-              {/* Leadership Section */}
+              {}
               <section>
                 <h3 className="text-3xl font-extrabold mb-8 flex items-center gap-3 text-[#241E1A]">
                   <span className="p-2.5 bg-[#E8DCCB] text-[#B87A44] rounded-xl"><Users size={24} /></span> 
@@ -412,7 +411,7 @@ const App = () => {
             </div>
           )}
 
-          {/* --- EDUCATION & CERTS TAB --- */}
+          {}
           {activeTab === 'education' && (
             <div className="grid md:grid-cols-12 gap-10">
               
@@ -479,7 +478,6 @@ const App = () => {
           )}
 
           {}
-          {/* --- HOBBIES TAB --- */}
           {activeTab === 'hobbies' && (
             <div className="space-y-10 animate-in fade-in zoom-in-95 duration-500">
               <div className="text-center max-w-3xl mx-auto mb-12">
@@ -599,5 +597,7 @@ const App = () => {
       </main>
 
     </div>
+  );
+};
   );
 };
